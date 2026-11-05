@@ -1,7 +1,10 @@
 {
   "profile": {
     "name": "Arjun",
-    "roles": ["Actor", "Filmmaker"],
+    "roles": [
+      "Actor",
+      "Filmmaker"
+    ],
     "tagline": "In front of the camera. Behind it too.",
     "heroImage": "media/cover.jpg",
     "heroImageAlt": "Arjun seated outdoors in a black T-shirt, looking into the camera",
@@ -10,9 +13,21 @@
     "hair": "Black",
     "skinTone": "Dusky",
     "build": "Athletic",
-    "languages": ["Telugu", "Hindi", "English", "Tamil"],
-    "skills": ["Boxing", "MMA", "Football"],
-    "honours": ["Rashtrapati Awardee", "NCC ‘C’ Certificate holder"],
+    "languages": [
+      "Telugu",
+      "Hindi",
+      "English",
+      "Tamil"
+    ],
+    "skills": [
+      "Boxing",
+      "MMA",
+      "Football"
+    ],
+    "honours": [
+      "Rashtrapati Awardee",
+      "NCC ‘C’ Certificate holder"
+    ],
     "summary": [
       "Hi Filmmaker / Production House,",
       "I'm a working actor with a strong belief in my screen presence and my craft. I can step into any character with ease, in my own way.",
@@ -41,14 +56,19 @@
       "side": "front",
       "role": "Actor",
       "type": "Demo film teaser",
-      "languages": ["Tamil", "Telugu"],
+      "languages": [
+        "Tamil",
+        "Telugu"
+      ],
       "place": "Hyderabad",
       "year": "2025–2026",
       "status": "Teaser out",
       "poster": "media/poster-ka-ranam.jpg",
       "link": "https://youtu.be/kJLdY-aq97Q?si=WTt1B--F43F629DY",
       "linkLabel": "Watch the teaser",
-      "tags": ["Teaser"],
+      "tags": [
+        "Teaser"
+      ],
       "notes": []
     },
     {
@@ -63,7 +83,9 @@
       "poster": "",
       "link": "https://drive.google.com/file/d/1EHF85-XT3nakc2QvmXwIiIFEN_sf2826/view?usp=sharing",
       "linkLabel": "Watch the film",
-      "tags": ["Festival"],
+      "tags": [
+        "Festival"
+      ],
       "notes": []
     },
     {
@@ -86,14 +108,18 @@
       "side": "behind",
       "role": "Assistant Director",
       "type": "Feature film",
-      "languages": ["Kannada"],
+      "languages": [
+        "Kannada"
+      ],
       "place": "Bangalore",
       "year": "",
       "status": "Released",
       "poster": "",
       "link": "https://youtube.com/watch?v=8jjDsmFPISQ&si=BCfZrcRqbus3t1x8",
       "linkLabel": "Watch on YouTube",
-      "tags": ["Direction"],
+      "tags": [
+        "Direction"
+      ],
       "notes": []
     },
     {
@@ -108,7 +134,10 @@
       "poster": "",
       "link": "",
       "linkLabel": "",
-      "tags": ["Creative direction", "Stage"],
+      "tags": [
+        "Creative direction",
+        "Stage"
+      ],
       "notes": [
         "Directed the overall creative vision and stage storytelling, aligning theme and visual presentation.",
         "Coordinated creative vision with production logistics, from concept to final event delivery."
@@ -119,31 +148,117 @@
       "side": "behind",
       "role": "Writer",
       "type": "Feature film",
-      "languages": ["Kannada", "Telugu"],
+      "languages": [
+        "Kannada",
+        "Telugu"
+      ],
       "place": "",
       "year": "2023–2024",
       "status": "Shelved",
       "poster": "",
       "link": "",
       "linkLabel": "",
-      "tags": ["Writing", "Thriller"],
+      "tags": [
+        "Writing",
+        "Thriller"
+      ],
       "notes": [
         "Refined narrative arcs, character development and thematic direction with the writers and creative team.",
         "Prepared the pitch deck, narration and story presentation for production partners.",
         "Shelved after the director's sudden passing."
       ]
+    },
+    {
+      "title": "Super gas",
+      "side": "front",
+      "role": "Model",
+      "type": "Co-operate AD",
+      "languages": [],
+      "place": "Hyderabad",
+      "year": "",
+      "status": "",
+      "poster": "",
+      "link": "",
+      "linkLabel": "",
+      "tags": [],
+      "notes": []
     }
   ],
   "photos": [
-    {"image": "media/cover.jpg", "caption": "Outdoor portrait", "tags": ["Headshot", "Casual"]},
-    {"image": "media/portrait-bw-1.jpg", "caption": "Profile", "tags": ["Headshot", "Black & white", "Physique"]},
-    {"image": "media/portrait-bw-2.jpg", "caption": "Smile", "tags": ["Headshot", "Black & white"]},
-    {"image": "media/portrait-jacket.jpg", "caption": "Jacket", "tags": ["Headshot", "Urban"]},
-    {"image": "media/portrait-seated.jpg", "caption": "Veranda", "tags": ["Casual"]},
-    {"image": "media/look-teenager.jpg", "caption": "Teenager look", "tags": ["Character look", "Youth"]},
-    {"image": "media/look-student.jpg", "caption": "Software / Student", "tags": ["Character look", "Urban"]},
-    {"image": "media/look-sports.jpg", "caption": "Sports drama", "tags": ["Character look", "Action", "Sports"]},
-    {"image": "media/look-sets.jpg", "caption": "From sets", "tags": ["Character look", "Rugged", "On set"]}
+    {
+      "image": "media/cover.jpg",
+      "caption": "Outdoor portrait",
+      "tags": [
+        "Headshot",
+        "Casual"
+      ]
+    },
+    {
+      "image": "media/portrait-bw-1.jpg",
+      "caption": "Profile",
+      "tags": [
+        "Headshot",
+        "Black & white",
+        "Physique"
+      ]
+    },
+    {
+      "image": "media/portrait-bw-2.jpg",
+      "caption": "Smile",
+      "tags": [
+        "Headshot",
+        "Black & white"
+      ]
+    },
+    {
+      "image": "media/portrait-jacket.jpg",
+      "caption": "Jacket",
+      "tags": [
+        "Headshot",
+        "Urban"
+      ]
+    },
+    {
+      "image": "media/portrait-seated.jpg",
+      "caption": "Veranda",
+      "tags": [
+        "Casual"
+      ]
+    },
+    {
+      "image": "media/look-teenager.jpg",
+      "caption": "Teenager look",
+      "tags": [
+        "Character look",
+        "Youth"
+      ]
+    },
+    {
+      "image": "media/look-student.jpg",
+      "caption": "Software / Student",
+      "tags": [
+        "Character look",
+        "Urban"
+      ]
+    },
+    {
+      "image": "media/look-sports.jpg",
+      "caption": "Sports drama",
+      "tags": [
+        "Character look",
+        "Action",
+        "Sports"
+      ]
+    },
+    {
+      "image": "media/look-sets.jpg",
+      "caption": "From sets",
+      "tags": [
+        "Character look",
+        "Rugged",
+        "On set"
+      ]
+    }
   ],
   "press": []
 }

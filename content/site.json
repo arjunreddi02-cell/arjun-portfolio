@@ -1,0 +1,149 @@
+{
+  "profile": {
+    "name": "Arjun",
+    "roles": ["Actor", "Filmmaker"],
+    "tagline": "In front of the camera. Behind it too.",
+    "heroImage": "media/cover.jpg",
+    "heroImageAlt": "Arjun seated outdoors in a black T-shirt, looking into the camera",
+    "height": "5′9″",
+    "screenAge": "20–30",
+    "hair": "Black",
+    "skinTone": "Dusky",
+    "build": "Athletic",
+    "languages": ["Telugu", "Hindi", "English", "Tamil"],
+    "skills": ["Boxing", "MMA", "Football"],
+    "honours": ["Rashtrapati Awardee", "NCC ‘C’ Certificate holder"],
+    "summary": [
+      "Hi Filmmaker / Production House,",
+      "I'm a working actor with a strong belief in my screen presence and my craft. I can step into any character with ease, in my own way.",
+      "The right face in the right director's hands becomes a story people remember. That is the collaboration I'm looking for.",
+      "Acting fits my personality and body language naturally, and I'm committed to mastering it."
+    ],
+    "profilePdf": "media/arjun-profile.pdf"
+  },
+  "contact": {
+    "email": "arjunreddi02@gmail.com",
+    "phone": "+91 70755 37404",
+    "whatsapp": "917075537404",
+    "instagram": "",
+    "youtube": "",
+    "imdb": ""
+  },
+  "showreel": {
+    "title": "Intro reel",
+    "url": "https://drive.google.com/file/d/1zM_RKcwmSCd39xZqxhENE5hGm0IDSfbW/view?usp=drivesdk",
+    "poster": "media/portrait-jacket.jpg",
+    "note": "A short introduction on camera."
+  },
+  "projects": [
+    {
+      "title": "Ka-Ranam",
+      "side": "front",
+      "role": "Actor",
+      "type": "Demo film teaser",
+      "languages": ["Tamil", "Telugu"],
+      "place": "Hyderabad",
+      "year": "2025–2026",
+      "status": "Teaser out",
+      "poster": "media/poster-ka-ranam.jpg",
+      "link": "https://youtu.be/kJLdY-aq97Q?si=WTt1B--F43F629DY",
+      "linkLabel": "Watch the teaser",
+      "tags": ["Teaser"],
+      "notes": []
+    },
+    {
+      "title": "Coffee Film Festival",
+      "side": "front",
+      "role": "Actor",
+      "type": "Festival film",
+      "languages": [],
+      "place": "",
+      "year": "",
+      "status": "",
+      "poster": "",
+      "link": "https://drive.google.com/file/d/1EHF85-XT3nakc2QvmXwIiIFEN_sf2826/view?usp=sharing",
+      "linkLabel": "Watch the film",
+      "tags": ["Festival"],
+      "notes": []
+    },
+    {
+      "title": "Intro video",
+      "side": "front",
+      "role": "Himself",
+      "type": "Actor introduction",
+      "languages": [],
+      "place": "",
+      "year": "",
+      "status": "",
+      "poster": "media/portrait-jacket.jpg",
+      "link": "https://drive.google.com/file/d/1zM_RKcwmSCd39xZqxhENE5hGm0IDSfbW/view?usp=drivesdk",
+      "linkLabel": "Watch",
+      "tags": [],
+      "notes": []
+    },
+    {
+      "title": "Kini",
+      "side": "behind",
+      "role": "Assistant Director",
+      "type": "Feature film",
+      "languages": ["Kannada"],
+      "place": "Bangalore",
+      "year": "",
+      "status": "Released",
+      "poster": "",
+      "link": "https://youtube.com/watch?v=8jjDsmFPISQ&si=BCfZrcRqbus3t1x8",
+      "linkLabel": "Watch on YouTube",
+      "tags": ["Direction"],
+      "notes": []
+    },
+    {
+      "title": "Miss P&I India",
+      "side": "behind",
+      "role": "Assistant Creative Director",
+      "type": "Live event",
+      "languages": [],
+      "place": "Goa",
+      "year": "2025",
+      "status": "Event",
+      "poster": "",
+      "link": "",
+      "linkLabel": "",
+      "tags": ["Creative direction", "Stage"],
+      "notes": [
+        "Directed the overall creative vision and stage storytelling, aligning theme and visual presentation.",
+        "Coordinated creative vision with production logistics, from concept to final event delivery."
+      ]
+    },
+    {
+      "title": "Untitled spy thriller",
+      "side": "behind",
+      "role": "Writer",
+      "type": "Feature film",
+      "languages": ["Kannada", "Telugu"],
+      "place": "",
+      "year": "2023–2024",
+      "status": "Shelved",
+      "poster": "",
+      "link": "",
+      "linkLabel": "",
+      "tags": ["Writing", "Thriller"],
+      "notes": [
+        "Refined narrative arcs, character development and thematic direction with the writers and creative team.",
+        "Prepared the pitch deck, narration and story presentation for production partners.",
+        "Shelved after the director's sudden passing."
+      ]
+    }
+  ],
+  "photos": [
+    {"image": "media/cover.jpg", "caption": "Outdoor portrait", "tags": ["Headshot", "Casual"]},
+    {"image": "media/portrait-bw-1.jpg", "caption": "Profile", "tags": ["Headshot", "Black & white", "Physique"]},
+    {"image": "media/portrait-bw-2.jpg", "caption": "Smile", "tags": ["Headshot", "Black & white"]},
+    {"image": "media/portrait-jacket.jpg", "caption": "Jacket", "tags": ["Headshot", "Urban"]},
+    {"image": "media/portrait-seated.jpg", "caption": "Veranda", "tags": ["Casual"]},
+    {"image": "media/look-teenager.jpg", "caption": "Teenager look", "tags": ["Character look", "Youth"]},
+    {"image": "media/look-student.jpg", "caption": "Software / Student", "tags": ["Character look", "Urban"]},
+    {"image": "media/look-sports.jpg", "caption": "Sports drama", "tags": ["Character look", "Action", "Sports"]},
+    {"image": "media/look-sets.jpg", "caption": "From sets", "tags": ["Character look", "Rugged", "On set"]}
+  ],
+  "press": []
+}

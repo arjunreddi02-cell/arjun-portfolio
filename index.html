@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arjun, Actor &amp; Filmmaker</title>
+<meta name="description" content="Arjun, actor and filmmaker. Showreel, work in front of and behind the camera, headshots, character looks and casting contact.">
+<meta name="theme-color" content="#0d0a07">
+<meta property="og:title" content="Arjun, Actor &amp; Filmmaker">
+<meta property="og:description" content="In front of the camera. Behind it too. Showreel, work, headshots and casting contact.">
+<meta property="og:image" content="media/cover.jpg">
+<script>document.documentElement.classList.add('js','is-opening')</script>
+<link rel="preload" href="public/fonts/limelight-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="public/fonts/imfell-400i.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="content/site.json" as="fetch" crossorigin>
+<link rel="stylesheet" href="src/styles/base.css">
+<link rel="stylesheet" href="src/styles/scenes.css">
+</head>
+<body>
+<!--
+  TEMPLATE. Do not edit content here: every word, photo and link on this page
+  comes from content/site.json (edit it at app.pagescms.org). Sections with
+  nothing in them stay hidden until you add something.
+-->
+
+<a class="skip" href="#work">Skip to the work</a>
+<canvas class="film" id="film" aria-hidden="true"></canvas>
+
+<header class="bar" id="bar">
+  <a class="bar__mark" href="#top" data-bind="name">Arjun</a>
+  <nav class="bar__nav" aria-label="Sections">
+    <a href="#reel" data-needs="reel">Showreel</a>
+    <a href="#work">Work</a>
+    <a href="#screen-test">Screen test</a>
+    <a href="#photos">Photos</a>
+    <a href="#contact" class="bar__cta">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- Opening: who, what, and how to reach him, inside two seconds ========= -->
+<section class="opening" id="top" aria-labelledby="name">
+  <div class="opening__beam" aria-hidden="true"></div>
+  <figure class="opening__still weave"><img id="hero-img" alt="" fetchpriority="high"></figure>
+  <div class="opening__card">
+    <p class="eyebrow opening__eyebrow">Introducing</p>
+    <h1 class="opening__name" id="name">Arjun</h1>
+    <p class="opening__role" id="hero-roles"></p>
+    <p class="opening__tag" id="hero-tag"></p>
+    <div class="opening__ctas" id="hero-ctas"></div>
+    <ul class="proof" id="proof" role="list" aria-label="At a glance"></ul>
+  </div>
+  <canvas class="leader" id="leader" aria-hidden="true"></canvas>
+  <button class="opening__skip" id="skip" type="button">Skip countdown</button>
+</section>
+
+<!-- Showreel ================================================================ -->
+<section class="reel" id="reel" aria-labelledby="reel-title" hidden>
+  <header class="section-head">
+    <p class="eyebrow">Showreel</p>
+    <h2 class="section-head__title" id="reel-title"></h2>
+    <p class="section-head__lede" id="reel-note"></p>
+  </header>
+  <div class="screen">
+    <span class="screen__curtain screen__curtain--l" aria-hidden="true"></span>
+    <span class="screen__curtain screen__curtain--r" aria-hidden="true"></span>
+    <div class="screen__frame" id="reel-frame">
+      <button class="screen__play" id="reel-play" type="button">
+        <img id="reel-poster" alt="">
+        <span class="screen__btn"><span aria-hidden="true">▶</span> Play the reel</span>
+      </button>
+    </div>
+  </div>
+  <p class="reel__out"><a id="reel-link" target="_blank" rel="noopener">Open the reel in a new tab <span aria-hidden="true">↗</span></a></p>
+</section>
+
+<!-- Both sides of the camera ================================================ -->
+<section class="work" id="work" aria-labelledby="work-title">
+  <div class="marquee">
+    <span class="marquee__bulbs" aria-hidden="true"></span>
+    <h2 class="marquee__title" id="work-title">Now showing</h2>
+    <p class="marquee__sub">Both sides of the camera</p>
+  </div>
+  <div class="sides__switch" role="tablist" aria-label="Choose a side">
+    <button role="tab" id="tab-front" aria-controls="side-front" aria-selected="true" data-side="front">In front <span data-count="front"></span></button>
+    <button role="tab" id="tab-behind" aria-controls="side-behind" aria-selected="false" data-side="behind">Behind <span data-count="behind"></span></button>
+  </div>
+  <div class="sides" id="sides" data-show="front">
+    <div class="side side--front" id="side-front" role="tabpanel" aria-labelledby="tab-front">
+      <h3 class="side__title">In front of the camera</h3>
+      <ul class="side__wall" role="list" id="wall-front"></ul>
+    </div>
+    <div class="sides__gate" aria-hidden="true"></div>
+    <div class="side side--behind" id="side-behind" role="tabpanel" aria-labelledby="tab-behind">
+      <h3 class="side__title">Behind the camera</h3>
+      <ul class="side__wall" role="list" id="wall-behind"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- Coming soon: only appears when a project is marked Upcoming =========== -->
+<section class="coming" id="coming" aria-labelledby="coming-title" hidden>
+  <header class="section-head">
+    <p class="eyebrow">Coming soon</p>
+    <h2 class="section-head__title" id="coming-title">Next on the bill</h2>
+  </header>
+  <ul class="coming__list" role="list" id="coming-list"></ul>
+</section>
+
+<!-- In his words: title cards =============================================== -->
+<section class="story pin" id="story" aria-labelledby="story-title">
+  <div class="pin__stage">
+    <h2 class="sr-only" id="story-title">In his words</h2>
+    <div class="story__cards" id="story-cards"></div>
+    <p class="story__count" aria-hidden="true"><span id="story-n">1</span> / <span id="story-total">1</span></p>
+  </div>
+</section>
+
+<!-- Screen test ============================================================= -->
+<section class="test pin" id="screen-test" aria-labelledby="test-title">
+  <div class="pin__stage test__stage">
+    <div class="test__slate">
+      <div class="slate">
+        <div class="slate__sticks" aria-hidden="true">
+          <span class="slate__stick slate__stick--top"></span>
+          <span class="slate__stick slate__stick--base"></span>
+        </div>
+        <div class="slate__board">
+          <h2 class="slate__title" id="test-title">Screen test</h2>
+          <dl class="slate__grid" id="slate"></dl>
+        </div>
+      </div>
+    </div>
+    <div class="test__reel">
+      <div class="strip" id="strip"><div class="strip__track" id="strip-track"></div></div>
+      <p class="test__hint" aria-hidden="true">Scroll to run the strip</p>
+    </div>
+  </div>
+</section>
+
+<!-- Photos and looks ======================================================== -->
+<section class="faces" id="photos" aria-labelledby="photos-title">
+  <header class="section-head">
+    <p class="eyebrow">Headshots and character looks</p>
+    <h2 class="section-head__title" id="photos-title">Many faces</h2>
+    <p class="section-head__lede">Filter by look. Hover or tab to circle a frame.</p>
+  </header>
+  <div class="filters" id="filters" role="group" aria-label="Filter photos"></div>
+  <div class="sheet" id="sheet"></div>
+</section>
+
+<!-- Press: only appears when there is something to show =================== -->
+<section class="press" id="press" aria-labelledby="press-title" hidden>
+  <header class="section-head">
+    <p class="eyebrow">Kind words</p>
+    <h2 class="section-head__title" id="press-title">From the reviews</h2>
+  </header>
+  <div class="press__list" id="press-list"></div>
+</section>
+
+<!-- End credits ============================================================= -->
+<section class="credits pin" id="credits" aria-labelledby="credits-title">
+  <div class="pin__stage credits__stage">
+    <div class="credits__roll" id="roll">
+      <h2 class="credits__name" id="credits-title"></h2>
+      <p class="credits__role" id="credits-role"></p>
+      <dl class="credits__list" id="credits-list"></dl>
+      <p class="credits__end">The End</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <p class="eyebrow">Casting enquiries</p>
+  <h2 class="contact__title" id="contact-title">Book a screen test</h2>
+  <div class="contact__ctas" id="contact-ctas"></div>
+  <div class="contact__rows" id="contact-rows"></div>
+  <p class="contact__links" id="contact-links"></p>
+  <p class="contact__foot" id="foot"></p>
+</section>
+
+</main>
+
+<!-- phone: contact is always one tap away -->
+<nav class="dock" id="dock" aria-label="Quick contact"></nav>
+
+<noscript><p class="noscript">Please turn on JavaScript to see this portfolio.</p></noscript>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

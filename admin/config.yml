@@ -1,0 +1,134 @@
+# Site editor settings. Open https://YOUR-SITE/admin, choose "Sign In with Token",
+# and edit. Saving updates the live site in about a minute.
+#
+# Repository: arjunreddi02-cell/arjun-portfolio
+
+backend:
+  name: github
+  repo: arjunreddi02-cell/arjun-portfolio
+  branch: main
+  auth_methods: [token]
+
+media_folder: media
+public_folder: media
+
+collections:
+  - name: portfolio
+    label: Portfolio
+    files:
+      - name: site
+        label: Portfolio content
+        file: content/site.json
+        format: json
+        fields:
+          - name: profile
+            label: Profile
+            widget: object
+            collapsed: false
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: roles, label: "Roles (e.g. Actor, Filmmaker)", widget: list, required: false }
+              - { name: tagline, label: Tagline under your name, widget: string, required: false }
+              - { name: heroImage, label: Opening photo, widget: image, required: false }
+              - { name: heroImageAlt, label: Opening photo description, widget: string, required: false }
+              - { name: height, label: Height, widget: string, required: false }
+              - { name: screenAge, label: Screen age, widget: string, required: false }
+              - { name: hair, label: Hair, widget: string, required: false }
+              - { name: skinTone, label: Skin tone, widget: string, required: false }
+              - { name: build, label: Build, widget: string, required: false }
+              - { name: languages, label: Languages, widget: list, required: false }
+              - { name: skills, label: Special skills, widget: list, required: false }
+              - { name: honours, label: Honours and awards, widget: list, required: false }
+              - name: summary
+                label: Title cards (one paragraph each)
+                widget: list
+                required: false
+                field: { name: line, label: Paragraph, widget: text }
+              - { name: profilePdf, label: Downloadable profile (PDF), widget: file, required: false }
+
+          - name: contact
+            label: Contact
+            widget: object
+            fields:
+              - { name: email, label: Email, widget: string, required: false }
+              - { name: phone, label: Phone (as shown), widget: string, required: false }
+              - { name: whatsapp, label: "WhatsApp number (digits, with country code, e.g. 917075537404)", widget: string, required: false }
+              - { name: instagram, label: Instagram link, widget: string, required: false }
+              - { name: youtube, label: YouTube link, widget: string, required: false }
+              - { name: imdb, label: IMDb link, widget: string, required: false }
+
+          - name: showreel
+            label: Showreel (hidden when the link is empty)
+            widget: object
+            fields:
+              - { name: title, label: Title, widget: string, required: false }
+              - { name: url, label: YouTube or Google Drive link, widget: string, required: false }
+              - { name: poster, label: Poster image, widget: image, required: false }
+              - { name: note, label: One-line note, widget: string, required: false }
+
+          - name: projects
+            label: Projects (in front of and behind the camera)
+            label_singular: Project
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.title}} · {{fields.role}}"
+            fields:
+              - { name: title, label: Title, widget: string }
+              - name: side
+                label: Side of the camera
+                widget: select
+                default: front
+                options:
+                  - { label: In front (acting), value: front }
+                  - { label: "Behind (direction, writing, creative)", value: behind }
+              - { name: role, label: Your role, widget: string, required: false }
+              - { name: type, label: "Type (feature, short, ad, web series, event…)", widget: string, required: false }
+              - { name: languages, label: Languages, widget: list, required: false }
+              - { name: place, label: Place, widget: string, required: false }
+              - { name: year, label: Year, widget: string, required: false }
+              - name: status
+                label: Status
+                widget: select
+                required: false
+                options:
+                  - { label: Released, value: Released }
+                  - { label: Teaser out, value: Teaser out }
+                  - { label: In production, value: In production }
+                  - { label: In post-production, value: In post-production }
+                  - { label: "Upcoming (shows in Coming soon)", value: Upcoming }
+                  - { label: Shelved, value: Shelved }
+                  - { label: Event, value: Event }
+              - { name: poster, label: Poster or still (optional), widget: image, required: false }
+              - { name: link, label: Watch link (optional), widget: string, required: false }
+              - { name: linkLabel, label: Link button text, widget: string, required: false }
+              - { name: tags, label: Tags, widget: list, required: false }
+              - name: notes
+                label: What you did (one line each)
+                widget: list
+                required: false
+                field: { name: note, label: Line, widget: text }
+
+          - name: photos
+            label: Photos and looks
+            label_singular: Photo
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.caption}}"
+            fields:
+              - { name: image, label: Photo, widget: image }
+              - { name: caption, label: Caption, widget: string, required: false }
+              - { name: tags, label: "Tags (use Headshot for the screen-test strip)", widget: list, required: false }
+
+          - name: press
+            label: Press and kind words (hidden when empty)
+            label_singular: Quote
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.source}}"
+            fields:
+              - { name: quote, label: Quote, widget: text }
+              - { name: source, label: Who said it, widget: string, required: false }
+              - { name: link, label: Link (optional), widget: string, required: false }

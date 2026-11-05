@@ -1,0 +1,156 @@
+/* ==========================================================================
+   ARJUN — An Evening at the Picture Palace
+   Layout idea: one night at a single-screen cinema. Each section is a reel,
+   projected warm onto a dark house; film texture lives on one fixed layer.
+   Single-theme by choice: the house lights are always down.
+   ========================================================================== */
+
+@font-face { font-family: 'Limelight'; src: url('../../public/fonts/limelight-400.woff2') format('woff2'); font-weight: 400; font-display: block; }
+@font-face { font-family: 'IM Fell English'; src: url('../../public/fonts/imfell-400.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'IM Fell English'; src: url('../../public/fonts/imfell-400i.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: block; }
+@font-face { font-family: 'Courier Prime'; src: url('../../public/fonts/courier-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Courier Prime'; src: url('../../public/fonts/courier-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+
+:root {
+  --house:  #0d0a07;   /* the dark auditorium */
+  --soot:   #19130d;   /* panels, slate board */
+  --paper:  #efe3c8;   /* projected light on the screen, title cards */
+  --amber:  #e3aa4a;   /* the projector lamp, marquee bulbs */
+  --velvet: #5e1519;   /* curtain oxblood, used sparingly */
+  --ash:    #a39782;   /* quiet text */
+  --line:   rgba(239, 227, 200, .18);
+
+  --marquee: 'Limelight', 'Didot', 'Bodoni 72', Georgia, serif;
+  --print:   'IM Fell English', 'Iowan Old Style', Georgia, serif;
+  --type:    'Courier Prime', 'Courier New', ui-monospace, monospace;
+
+  --gutter: clamp(16px, 4vw, 56px);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --ease-snap: cubic-bezier(.7, 0, .2, 1);
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--house);
+  /* clip, never hidden: overflow-x:hidden turns body into a scroll container
+     and silently breaks every position:sticky pin below */
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--house);
+  color: var(--paper);
+  font-family: var(--print);
+  font-size: clamp(17px, 1.05vw + 10px, 20px);
+  line-height: 1.55;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { text-wrap: balance; margin: 0; font-weight: 400; }
+p { margin: 0; }
+
+:focus-visible { outline: 2px solid var(--amber); outline-offset: 4px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip {
+  position: fixed; left: 12px; top: -60px; z-index: 100;
+  background: var(--paper); color: var(--house); padding: 10px 14px;
+  font-family: var(--type); text-decoration: none;
+}
+.skip:focus { top: 12px; }
+
+/* --- film layer ------------------------------------------------------------ */
+.film {
+  position: fixed; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 60;
+}
+.film.is-flat { box-shadow: inset 0 0 18vmax rgba(0, 0, 0, .55); }
+
+/* --- shared type ----------------------------------------------------------- */
+.eyebrow {
+  font-family: var(--type);
+  font-size: .78rem;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+.rule {
+  display: block; height: 1px; width: min(320px, 60%);
+  background: linear-gradient(90deg, transparent, var(--amber) 18% 82%, transparent);
+  position: relative;
+}
+.rule::before, .rule::after {
+  content: ''; position: absolute; top: -3px; width: 7px; height: 7px;
+  background: var(--amber); transform: rotate(45deg);
+}
+.rule::before { left: calc(18% - 10px); }
+.rule::after  { right: calc(18% - 10px); }
+
+.section-head {
+  display: grid; gap: .6rem;
+  max-width: 62ch;
+  margin: 0 auto clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+  justify-items: center;
+}
+.section-head__title {
+  font-family: var(--marquee);
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  line-height: 1;
+  color: var(--paper);
+  letter-spacing: .02em;
+}
+.section-head__lede { color: var(--ash); font-style: italic; }
+
+/* --- top bar --------------------------------------------------------------- */
+.bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 40;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 14px var(--gutter);
+  background: linear-gradient(var(--house), rgba(13, 10, 7, 0));
+  transition: opacity .8s var(--ease-out), transform .8s var(--ease-out);
+}
+.bar__mark {
+  font-family: var(--marquee); font-size: 1.35rem; letter-spacing: .12em;
+  text-decoration: none; color: var(--amber);
+}
+.bar__nav { display: flex; gap: clamp(.8rem, 2vw, 1.8rem); align-items: center; }
+.bar__nav a {
+  font-family: var(--type); font-size: .78rem; letter-spacing: .18em; text-transform: uppercase;
+  text-decoration: none; color: var(--ash);
+  padding: 6px 0; border-bottom: 1px solid transparent;
+  transition: color .3s, border-color .3s;
+}
+.bar__nav a:hover, .bar__nav a.is-here { color: var(--paper); border-color: var(--amber); }
+.bar__nav .bar__cta { color: var(--house); background: var(--amber); padding: 6px 12px; border: 0; }
+.bar__nav .bar__cta:hover { color: var(--house); background: var(--paper); }
+@media (max-width: 900px) {
+  .bar__nav a:not(.bar__cta) { display: none; }
+}
+/* during the opening the bar waits for the title card */
+.js.is-opening .bar { opacity: 0; transform: translateY(-12px); pointer-events: none; }
+
+/* --- pinned scenes --------------------------------------------------------- */
+/* a pinned section is taller than the screen; its stage sticks while the
+   extra height scrolls past, and that progress drives the scene */
+.js .pin { height: var(--pin-h, 300svh); position: relative; }
+.js .pin__stage {
+  position: sticky; top: 0;
+  height: 100svh; overflow: hidden;
+}
+
+/* --- gate weave: the projected image never sits perfectly still ------------ */
+.weave { will-change: transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001s !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition-duration: .001s !important; }
+}
